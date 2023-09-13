@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            padding-top: 130px;
+            flex-direction: column;
+            gap: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(44, 23, 94);
+        }
+        button
+        {
+            padding: 30px 40px;
+            font-size: 50px;
+            margin: 10px;
+            transition: all 200ms;
+        }
+        .rockpapersc
+        {
+            display: flex;
+        }
+        .rockpapersc button:hover
+        {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+        body > button:hover
+        {
+        cursor: pointer; 
+         
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color:white ; font-size: 50px; font-weight: 900;">Rock Paper Scissors</h1>
+    <div class="rockpapersc">
+        <button onclick=" MatchResult('Rock')">✊</button>
+        <button onclick="MatchResult('Paper')">✋</button>
+        <button onclick="MatchResult('Scissors')">✌</button>
+    </div>
+    <button onclick="ResetScore()" style="transform: scale(0.3); border: none; font-size: 60px;">Reset Score</button>
+    <script src="style.js"></script>
+</body>
+
+</html>
