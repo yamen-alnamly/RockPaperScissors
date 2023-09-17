@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+    <title>ROCK PAPER SCISSORS</title>
+     <style>
         body
         {
             padding-top: 130px;
@@ -15,7 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgb(44, 23, 94);
+            background-color: rgb(170, 19, 19);
         }
         button
         {
@@ -37,19 +37,69 @@
         {
         cursor: pointer; 
          
+        } 
+        .js-score
+        {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: -1px;
+        }
+        #game
+        {
+            position: relative;
+            height: 80vh;
+            margin-top: -75px;
+            margin-bottom: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .js-result
+        {
+            top: 20%;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            color: rgb(0, 0, 0);
+            font-size: 50px;
+              text-align: center;
+              transform: scale(1.4);
+              border-radius: 10px;
+        }
+        @media  (max-width : 500px ){
+            #game
+            {
+                overflow-x: hidden;   
+                text-align: center;
+            } 
+            .rockpapersc button
+            {
+                  padding: 15px 17px;
+            }
+            .js-result
+            {
+                transform: scale(0.8);
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1 style="color:white ; font-size: 50px; font-weight: 900;">Rock Paper Scissors</h1>
-    <div class="rockpapersc">
-        <button onclick=" MatchResult('Rock')">✊</button>
-        <button onclick="MatchResult('Paper')">✋</button>
-        <button onclick="MatchResult('Scissors')">✌</button>
-    </div>
-    <button onclick="ResetScore()" style="transform: scale(0.3); border: none; font-size: 60px;">Reset Score</button>
-    <script src="style.js"></script>
+    <section id="game">
+        <h1 style="color:white ; font-size: 50px; font-weight: 900;">Rock Paper Scissors</h1>
+        <div class="rockpapersc">
+            <button onclick=" MatchResult('Rock')">✊</button>
+            <button onclick="MatchResult('Paper')">✋</button>
+            <button onclick="MatchResult('Scissors')">✌</button>
+        </div>
+        <p class="js-result"></p>
+        
+        <p class="js-score"></p>
+        <button onclick="ResetScore()" style="transform: scale(0.3); border: none; font-size: 60px;">Reset Score</button>
+        <script src="style.js"></script>
+    </section>
 </body>
 
 </html>

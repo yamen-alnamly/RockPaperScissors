@@ -77,8 +77,13 @@ function MatchResult(Move) {
         score.ties += 1;
     }
     localStorage.setItem('score', JSON.stringify(score));
-    alert(`you picked ${Move}, the computer picked ${computerMove} , you ${result}
-Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`);
+    document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`;
+    document.querySelector('.js-result').innerHTML = ` the computer picked ${computerMove} , you ${result}` ;
+    setTimeout(() => {
+        document.querySelector('.js-result').innerHTML = '' 
+    }, 2000 );
+    //     alert(`you picked ${Move}, the computer picked ${computerMove} , you ${result}
+// Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`);
 
 }
 function ResetScore(){
@@ -86,7 +91,12 @@ function ResetScore(){
     score.losses = 0;
     score.wins = 0;
     localStorage.removeItem('score');
-   
-    alert(`The score has been reset
-Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`); 
+    document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`;
+    document.querySelector('.js-score').innerHTML = `  The score has been reset <br>
+Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`; 
+setTimeout(() => {
+    document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`;
+}, 2000);
 }
+document.querySelector('.js-score').innerHTML = `Wins: ${score.wins} , Losses: ${score.losses} , ties: ${score.ties}`;
+
